@@ -1,0 +1,73 @@
+(source gnu)
+(source melpa)
+
+(depends-on "evil")
+
+;; company-mode
+(depends-on "company")
+
+;; region
+(depends-on "wrap-region")
+
+;; undo
+(depends-on "undo-tree")
+
+;; highlight
+(depends-on "vline")
+(depends-on "col-highlight")
+
+;; snippet
+(depends-on "yasnippet")
+
+;; cursor
+(depends-on "goto-chg")
+
+;; buffer
+(depends-on "popwin")
+(depends-on "buffer-move")
+
+;; Key utility
+(depends-on "smartrep")
+
+;; Python
+(depends-on "company-jedi")
+
+;; Emacs Lisp
+(depends-on "paredit")
+
+;; go
+(depends-on "go-mode")
+(depends-on "company-go")
+(depends-on "go-eldoc")
+(depends-on "helm-godoc" :git "https://github.com/syohex/emacs-helm-godoc.git")
+(depends-on "golint")
+
+;; helm
+(depends-on "helm")
+
+;; Directory
+(depends-on "dired-k")
+
+;; Search
+(depends-on "anzu")
+
+;;;; popwin
+(depends-on "import-popwin")
+
+;;;; helm
+(depends-on "helm-gtags")
+(depends-on "helm-descbinds")
+(depends-on "helm-ag")
+
+;; git
+(depends-on "git-gutter")
+
+;; cmake
+(depends-on "cmake-mode")
+
+;; markdown
+(depends-on "markdown-mode")
+
+;; My own tools
+(depends-on "editutil" :git "https://github.com/syohex/emacs-editutil.git")
+(depends-on "eshellutil" :git "https://github.com/syohex/emacs-eshellutil.git")
