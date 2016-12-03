@@ -1,0 +1,40 @@
+[user]
+name = Syohei YOSHIDA
+email = syohex@gmail.com
+
+[color]
+branch = auto
+diff   = auto
+status = auto
+
+[color "branch"]
+current = yellow reverse
+local   = cyan
+remote  = green
+
+[color "status"]
+added     = green bold
+changed   = red
+untracked = cyan
+
+[color]
+ui = auto
+
+[core]
+editor=emacsclient
+pager=less
+
+[alias]
+st = status -s -b
+co = checkout
+dw = diff --color-words
+tr = log --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
+logg = log --stat --pretty=format:'%C(yellow)%h %Cgreen[%ar] %C(bold)%C(cyan)%an %Creset%s %Cred%d'
+tag-date= log --tags --simplify-by-decoration --pretty='format:%ai %d'
+delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+pr-fetch = !sh -c 'git fetch origin pull/$1/head:pr-$1' -
+
+[rebase]
+stat=true
+
+[merge]
