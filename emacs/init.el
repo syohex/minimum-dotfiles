@@ -122,6 +122,7 @@
 (global-set-key (kbd "C-x C-c C-c") 'helm-M-x)
 (global-set-key (kbd "M-g .") 'helm-ag)
 (global-set-key (kbd "M-g ,") 'helm-ag-pop-stack)
+(global-set-key (kbd "M-g p") 'helm-ag-project-root)
 (global-set-key (kbd "M-g M-f") 'ffap)
 
 ;; show paren
