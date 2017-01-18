@@ -77,7 +77,7 @@
                cmake-mode
                markdown-mode
                gfm-mode)))
-  (dolist (mode my/electric-pair-enabled-modes)
+  (dolist (mode modes)
     (add-hook (intern (format "%s-hook" mode)) 'electric-pair-local-mode)))
 
 ;; smartrep
