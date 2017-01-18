@@ -6,9 +6,6 @@
 ;; company-mode
 (depends-on "company")
 
-;; region
-(depends-on "wrap-region")
-
 ;; undo
 (depends-on "undo-tree")
 
