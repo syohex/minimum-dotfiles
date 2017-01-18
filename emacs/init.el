@@ -261,6 +261,7 @@
 (defalias 'my/ctrl-q-prefix my/ctrl-q-map)
 (define-key global-map (kbd "C-q") 'my/ctrl-q-prefix)
 (define-key my/ctrl-q-map (kbd "C-q") 'quoted-insert)
+(define-key my/ctrl-q-map (kbd "C-c") 'column-highlight-mode)
 
 ;; goto-chg
 (smartrep-define-key
