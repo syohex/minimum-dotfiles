@@ -68,6 +68,7 @@
 ;; electric-pair(like autopair)
 (let ((modes '(c-mode
                c++-mode
+               objective-c
                python-mode
                ruby-mode
                sh-mode
@@ -76,6 +77,7 @@
                css-mode
                cmake-mode
                markdown-mode
+               org-mode
                gfm-mode)))
   (dolist (mode modes)
     (add-hook (intern (format "%s-hook" mode)) 'electric-pair-local-mode)))
