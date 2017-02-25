@@ -305,7 +305,7 @@
 
 ;; yasnippet
 (with-eval-after-load 'yasnippet
-  (setq	yas-prompt-functions '(my-yas/prompt))
+  (setq yas-prompt-functions '(my-yas/prompt))
   (yas-reload-all))
 
 ;; enable yasnippet mode
@@ -356,7 +356,7 @@
 (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
 (smartrep-define-key
  global-map "C-x" '(("n" . 'git-gutter:next-hunk)
-		    ("p" . 'git-gutter:previous-hunk)))
+                    ("p" . 'git-gutter:previous-hunk)))
 
 ;; eshell
 (custom-set-variables
@@ -373,34 +373,34 @@
 
 (with-eval-after-load 'diff-mode
   (set-face-attribute 'diff-added nil
-		      :background nil :foreground "green"
-		      :weight 'normal)
+                      :background nil :foreground "green"
+                      :weight 'normal)
   (set-face-attribute 'diff-removed nil
-		      :background nil :foreground "red"
-		      :weight 'normal)
+                      :background nil :foreground "red"
+                      :weight 'normal)
 
   (set-face-attribute 'diff-refine-changed nil
-		      :background nil :foreground "yellow"
-		      :weight 'normal)
+                      :background nil :foreground "yellow"
+                      :weight 'normal)
 
   (set-face-attribute 'diff-file-header nil
-		      :foreground "white"
-		      :background nil :weight 'extra-bold)
+                      :foreground "white"
+                      :background nil :weight 'extra-bold)
 
   (set-face-attribute 'diff-function nil
-		      :foreground "cyan"
-		      :background nil
-		      :underline nil)
+                      :foreground "cyan"
+                      :background nil
+                      :underline nil)
 
   (set-face-attribute 'diff-header nil
-		      :background nil
-		      :underline nil)
+                      :background nil
+                      :underline nil)
 
   (set-face-attribute 'diff-hunk-header nil
-		      :foreground "yellow"
-		      :background nil
-		      :weight 'bold
-		      :underline t))
+                      :foreground "yellow"
+                      :background nil
+                      :weight 'bold
+                      :underline t))
 
 (set-face-attribute 'helm-selection nil
                     :foreground "pink" :background "black")
@@ -456,7 +456,7 @@
   (setq compile-command "go test"))
 
 (add-to-list 'auto-mode-alist
-	     '("\\.\\(pl\\|pm\\|cgi\\|t\\|psgi\\)\\'" . cperl-mode))
+             '("\\.\\(pl\\|pm\\|cgi\\|t\\|psgi\\)\\'" . cperl-mode))
 (add-to-list 'auto-mode-alist '("cpanfile\\'" . cperl-mode))
 
 (with-eval-after-load 'cperl-mode
