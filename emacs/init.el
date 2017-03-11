@@ -204,9 +204,9 @@
   (helm-gtags-mode))
 
 (add-hook 'c-mode-hook 'my/c-mode-hook)
-
-;; C++ coding style
 (add-hook 'c++-mode-hook 'my/c-mode-hook)
+
+(add-to-list 'auto-mode-alist '(("\\.mm?\\'") . objc-mode)
 
 (global-set-key (kbd "M-/") 'undo-tree-redo)
 
