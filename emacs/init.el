@@ -68,7 +68,7 @@
 ;; electric-pair(like autopair)
 (let ((modes '(c-mode
                c++-mode
-               objective-c
+               objc-mode
                python-mode
                ruby-mode
                sh-mode
