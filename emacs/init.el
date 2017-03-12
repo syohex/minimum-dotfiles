@@ -203,8 +203,14 @@
   (add-to-list 'company-backends 'company-clang)
   (helm-gtags-mode))
 
+(defun my/objc-mode-hook ()
+  (setq c-basic-offset 4)
+  (c-toggle-electric-state -1)
+  (setq-local company-backends '(company-clang company-dabbrev)))
+
 (add-hook 'c-mode-hook 'my/c-mode-hook)
 (add-hook 'c++-mode-hook 'my/c-mode-hook)
+(add-hook 'objc-mode-hook 'my/objc-mode-hook)
 
 (add-to-list 'auto-mode-alist '(("\\.mm?\\'") . objc-mode)
 
