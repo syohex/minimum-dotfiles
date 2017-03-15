@@ -65,7 +65,7 @@
 (dolist (hook '(emacs-lisp-mode-hook lisp-interaction-mode-hook lisp-mode-hook))
   (add-hook hook 'enable-paredit-mode))
 
-;; electric-pair(like autopair)
+;; electric-pair
 (let ((modes '(c-mode
                c++-mode
                objc-mode
@@ -80,7 +80,7 @@
                org-mode
                gfm-mode)))
   (dolist (mode modes)
-    (add-hook (intern (format "%s-hook" mode)) 'electric-pair-local-mode)))
+    (add-hook (intern (format "%s-hook" mode)) #'electric-pair-local-mode)))
 
 ;; smartrep
 (require 'smartrep)
@@ -145,7 +145,6 @@
   (define-key dired-mode-map (kbd "r") 'wdired-change-to-wdired-mode)
   (define-key dired-mode-map (kbd "C-M-u") 'dired-up-directory)
   (define-key dired-mode-map (kbd "K") 'dired-k)
-  ;; display directories by first
   (load-library "ls-lisp"))
 
 (custom-set-variables
