@@ -96,6 +96,8 @@ alias grep='grep --color=always'
 alias e='emacsclient'
 alias s='git st '
 alias d='git diff '
+alias dw='git diff --word-diff'
+alias dc='git diff --cached'
 
 # global alias
 alias -g L='|less -R'
