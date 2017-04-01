@@ -118,7 +118,7 @@ export LESSCHARSET=utf-8
 ## Chdir to the ``default-directory'' of currently opened in Emacs buffer.
 cde() {
     EMACS_CWD=`emacsclient -e "(editutil-current-buffer-directory)" | sed 's/^"\(.*\)"$/\1/'`
-    if [ $EMACS_CWD = "nil" ]; then
+    if [[ $EMACS_CWD == "nil" ]]; then
 	echo "Not found directory"
 	return
     fi
@@ -128,9 +128,9 @@ cde() {
 }
 
 ## Chdir top of Git project
-cdp () {
+cdp() {
     dir=$(git rev-parse --show-toplevel 2>/dev/null)
-    if [ $? -eq 0 ]; then
+    if [[ $? == 0 ]]; then
 	CDP=$dir
         cd $dir
     else
@@ -142,7 +142,7 @@ cdp () {
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats '(%b)'
 zstyle ':vcs_info:*' actionformats '[%s]-(%b|%a)'
-precmd () {
+precmd() {
     psvar=()
     LANG=en_US.UTF-8 vcs_info
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
