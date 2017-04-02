@@ -280,6 +280,7 @@
 ;; company-mode
 (require 'company)
 (custom-set-variables
+ '(company-selection-wrap-around t)
  '(company-idle-delay nil))
 
 (global-company-mode +1)
