@@ -86,7 +86,7 @@
 (require 'smartrep)
 
 ;; saveplace
-(savehist-mode 1)
+(savehist-mode +1)
 (save-place-mode +1)
 
 ;; hippie-expand
@@ -155,7 +155,7 @@
  '(ls-lisp-dirs-first t))
 
 (autoload 'dired-jump "dired-x" nil t)
-(global-set-key (kbd "C-x C-j") 'dired-jump)
+(global-set-key (kbd "C-x C-j") #'dired-jump)
 
 ;; server start for emacs-client
 (require 'server)
@@ -164,7 +164,7 @@
 (defalias 'exit 'save-buffers-kill-emacs)
 
 ;; backspace
-(when (not window-system)
+(unless window-system
   (normal-erase-is-backspace-mode 0))
 
 (require 'uniquify)
@@ -222,8 +222,6 @@
 ;; helm
 (require 'helm-config)
 (require 'helm)
-
-(define-key helm-map (kbd "C-q") 'helm-execute-persistent-action)
 
 (custom-set-variables
  '(helm-input-idle-delay 0)
