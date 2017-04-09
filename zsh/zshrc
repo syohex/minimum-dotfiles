@@ -29,10 +29,6 @@ bindkey '^[^B' vi-backward-blank-word
 bindkey '^[^F' vi-forward-blank-word
 bindkey '^[^K' delete-word
 
-# unbind keys for miss typing
-bindkey -r '^O'
-bindkey -r '^J'
-
 # for incremental search
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^S' history-incremental-pattern-search-forward
@@ -47,7 +43,7 @@ setopt ignoreeof
 setopt NOHUP
 setopt nocheckjobs
 
-# stty
+# Use Ctrl-s for history
 stty stop undef
 
 # completion like emacs
@@ -116,7 +112,7 @@ export PAGER='less'
 export LESSCHARSET=utf-8
 
 ## Chdir to the ``default-directory'' of currently opened in Emacs buffer.
-cde() {
+function cde() {
     EMACS_CWD=`emacsclient -e "(editutil-current-buffer-directory)" | sed 's/^"\(.*\)"$/\1/'`
     if [[ $EMACS_CWD == "nil" ]]; then
 	echo "Not found directory"
@@ -128,7 +124,7 @@ cde() {
 }
 
 ## Chdir top of Git project
-cdp() {
+function cdp() {
     dir=$(git rev-parse --show-toplevel 2>/dev/null)
     if [[ $? == 0 ]]; then
 	CDP=$dir
@@ -142,7 +138,7 @@ cdp() {
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats '(%b)'
 zstyle ':vcs_info:*' actionformats '[%s]-(%b|%a)'
-precmd() {
+function precmd() {
     psvar=()
     LANG=en_US.UTF-8 vcs_info
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
@@ -175,7 +171,7 @@ bindkey -s "^Xwu" " hub browse -u"
 
 # completion git
 # for git completion(too slowly in big repository)
-__git_files () {
+function __git_files () {
     _wanted files expl 'local files' _files
 }
 
@@ -193,6 +189,6 @@ function _delete_previous_word () {
 zle -N delete_previous_word _delete_previous_word
 bindkey '^[^U' delete_previous_word
 
-# for Emacs
+# for Emacs colors
 export TERM=xterm
 path=(~/bin $path)
